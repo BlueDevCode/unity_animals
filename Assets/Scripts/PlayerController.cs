@@ -18,5 +18,8 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput= Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right*Time.deltaTime*speed*horizontalInput);
+        if( transform.position.x< -15){
+           transform.position = new Vector3(x:-15, transform.position.y,transfor.position.z);
+        }
     }
 }
