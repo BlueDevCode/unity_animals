@@ -32,4 +32,20 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+     //Acciones del Personaje
+      if (Input.GetKey(KeyCode.Space))
+      {
+        Instantiate(projectilePrefab,
+        transform.position,
+        projectilePrefab.transform.rotation);
+      }
+
+
+
 }
+
+
+
+
+
