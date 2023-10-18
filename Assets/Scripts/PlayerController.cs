@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
             transform.position.z);
         }
 
-    }
+    
 
      //Acciones del Personaje
       if (Input.GetKey(KeyCode.Space))
@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 
 
 
+}
 }
 
 
