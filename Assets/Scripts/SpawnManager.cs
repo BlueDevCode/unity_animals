@@ -6,15 +6,24 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] enemies;
     public int animalIndex;
+    private float spawnRangeX = 20f;
+    private float spawnPosz;
+    void Star(){
+        spawnPosz = this.transform.position.z;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (animalIndex >=0 && animalIndex < enemies.Length){
+        if (animalIndex >=0 && animalIndex < enemies.Length)
+        {
             if (Input.GetKeyDown(KeyCode.S))
+            {
+             Vector3 spawnPos  = new Vector3(Random.Range(-spawnRangeX, spawnRangeX),0,spawnPosz);
             Instantiate( enemies [animalIndex],
-            new Vector3(0,0,transform.position.z),
+            spawnPos,
             enemies[animalIndex].transform.rotation);
+         }
         }
         
     }
