@@ -7,18 +7,23 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemies;
     public int animalIndex;
     private float spawnRangeX = 20f;
-    private float spawnPosZ;
-    void Star(){
+    private float spawnPosZ = 29f;
+
+   [SerializeField,Range(2,5)]
+    public float startDelay= 2f;
+     [SerializeField,Range(0.1f,3f)]
+    public float spawnInterval= 0.1f ;
+
+    private void Star(){
         spawnPosZ = this.transform.position.z;
+        InvokeRepeating("SpwanRandomAnimal",startDelay,spawnInterval);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-            if (Input.GetKeyDown(KeyCode.S))
-            {
+    
+    private void SpwanRandomAnimal()
+    
+        {
              float xRand= Random.Range(-spawnRangeX, spawnRangeX);
              Vector3 spawnPos  = new Vector3(xRand,0,spawnPosZ);
 
@@ -28,7 +33,11 @@ public class SpawnManager : MonoBehaviour
             enemies[animalIndex].transform.rotation);
          }
         
-        
-    }
+    
+
+
+
+
+
 }
   
