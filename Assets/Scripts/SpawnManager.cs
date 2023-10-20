@@ -7,21 +7,21 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemies;
     public int animalIndex;
     private float spawnRangeX = 20f;
-    private float spawnPosZ = 29f;
+    private float spawnPosZ ;
 
    [SerializeField,Range(2,5)]
-    public float startDelay= 2f;
+    public float startDelay= 2.0f;
      [SerializeField,Range(0.1f,3f)]
     public float spawnInterval= 0.1f ;
 
     private void Star(){
         spawnPosZ = this.transform.position.z;
-        InvokeRepeating("SpwanRandomAnimal",startDelay,spawnInterval);
+        InvokeRepeating("SpawnRandomAnimal",startDelay,spawnInterval);
 
     }
 
     
-    private void SpwanRandomAnimal()
+    private void SpawnRandomAnimal()
     
         {
              float xRand= Random.Range(-spawnRangeX, spawnRangeX);
